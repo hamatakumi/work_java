@@ -3,18 +3,18 @@ package work_java;
 public class Lesson05 {
 
 	public static void main(String[] args) {
-//		課題１
+//課題１
 		//１から１０までの数値をランダムで生成
 		int r1 = new java.util.Random().nextInt(10) +1;
 		
 		//２で割った余りが０なら偶数、偽であれば奇数と表示。
 		if (r1 % 2 == 0) {
 			System.out.println(r1 + "は偶数です。");
-		} else
+		} else {
 			System.out.println(r1 + "は奇数です。");
-
+		}
 		
-//		課題２
+//課題２
 		//１から１００までの数値(点数)をランダムで生成。
 		int r2 = new java.util.Random().nextInt(101);
 		
@@ -31,7 +31,7 @@ public class Lesson05 {
 			System.out.println("点数：" + r2 + "　評価：満点");
 		}
 		
-//		課題３
+//課題３
 		//１から１００までの数値(点数)をランダムで生成(２科目分)。
 		int sbj1 = new java.util.Random().nextInt(101);
 		int sbj2 = new java.util.Random().nextInt(101);
