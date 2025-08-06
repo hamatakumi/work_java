@@ -26,9 +26,9 @@ public class Lesson09 {
     }
 
     public static void main(String[] args) throws Exception {
-		Reader reader = new FileReader("/Users/hamamototakumi/Downloads/sample.json");
-		Gson gson = new Gson();
-		//JSONをMap形式で読み込み、prefecturesに代入。この値を各メソッドの引数とする。
+	Reader reader = new FileReader("/Users/hamamototakumi/Downloads/sample.json");
+	Gson gson = new Gson();
+	//JSONをMap形式で読み込み、prefecturesに代入。この値を各メソッドの引数とする。
         Map<String, Prefecture> prefectures = gson.fromJson(reader, new TypeToken<Map<String, Prefecture>>() {}.getType());
 
         // 課題１のメソッドを呼び出し
