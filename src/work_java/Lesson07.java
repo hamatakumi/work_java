@@ -2,6 +2,7 @@ package work_java;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Lesson07 {
@@ -46,7 +47,7 @@ public class Lesson07 {
 		    }
 		};
 		
-		// 多次元配列employeesを出力
+		//多次元配列employeesを出力
 		for (Map.Entry<String, HashMap<String, String>> entry : employees.entrySet()) {
 			//名前を取得
 			String name = entry.getKey();
@@ -72,43 +73,23 @@ public class Lesson07 {
 		System.out.println(number);
 		
 //応用問題２
-		//課題2の配列から、名前と年齢だけの連想配列を作成
-		HashMap<String, HashMap<String, String>> person = new HashMap<String, HashMap<String, String>>() {
-		    {
-		        put("鈴木", new HashMap<String, String>() {
-		            {
-		                put("age", "40");
-		            }
-		        });
-		        put("太田", new HashMap<String, String>() {
-		            {
-		                put("age", "50");
-		            }
-		        });
-		        put("佐伯", new HashMap<String, String>() {
-		            {
-		                put("age", "60");
-		            }
-		        });
-		        put("中西", new HashMap<String, String>() {
-		            {
-		                put("age", "70");
-		            }
-		        });
-		    }
-		};
-		
-		// 多次元配列personを出力
-		for (Map.Entry<String, HashMap<String, String>> entry : person.entrySet()) {
-			//名前を取得
-			String name = entry.getKey();
-		    //entryのvalueの部分を取得
-		    HashMap<String, String> info = entry.getValue();
-		    //年齢を取得
-		    String age = info.get("age");
-		    //名前と年齢を表示
-		    System.out.println(name + "　" + age + "歳　");
-		}	
+        //名前と年齢だけの連想配列を作成
+        List<HashMap<String, String>> newList = new ArrayList<>();
+        
+        //課題２の配列から全ての名前を取得し、HashMapを新たに作成。infoに名前と年齢を格納後それをnewListに格納。
+        for (String name : employees.keySet()) {
+            HashMap<String, String> info = new HashMap<>();
+            info.put("name", name);
+            info.put("age", employees.get(name).get("age"));
+            newList.add(info);
+        }
+
+        //作成した配列を表示
+        for (HashMap<String, String> entry : newList) {
+        	String name = entry.get("name");
+        	String age = entry.get("age");
+            System.out.println(name + "　" + age + "歳");
+        }
 		
 	}
 
