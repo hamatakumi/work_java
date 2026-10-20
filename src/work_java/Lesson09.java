@@ -8,8 +8,10 @@ public class Lesson09 {
     // JSON内の必要な要素を宣言
     public static class Prefecture {
         String id;
+      
         //shortを変数として使えないので@SerializedNameを使用
-//        @SerializedName("short")
+        @SerializedName("short")
+
         String shortName;
         List<City> city;
     }
